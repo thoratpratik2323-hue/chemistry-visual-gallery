@@ -24,50 +24,59 @@
             <p class="subtitle">Every important graph and diagram from NCERT, simplified for quick recall.</p>
         </header>
 
-        <main class="gallery-grid">
-            <!-- Block: Chemical Kinetics -->
-            <div class="gallery-card">
-                <h3>Chemical Kinetics Graphs</h3>
-                <div class="visual-container">
-                    <div class="css-graph kinetics">
-                        <div class="graph-title">Zero Order [R] vs Time</div>
-                        <div class="line zero-order"></div>
-                    </div>
-                </div>
-                <p class="description"><b>Zero Order:</b> Straight line downward. Slope = -k. <br><b>First Order:</b>
-                    log[R] vs t is straight line. Slope = -k/2.303.</p>
-            </div>
+        <!-- Chapter Navigation -->
+        <nav class="chapter-nav">
+            <button class="nav-chip active" onclick="loadChapter('Solutions')">Solutions</button>
+            <button class="nav-chip" onclick="loadChapter('Electrochemistry')">Electrochemistry</button>
+            <button class="nav-chip" onclick="loadChapter('Chemical Kinetics')">Kinetics</button>
+            <button class="nav-chip" onclick="loadChapter('d & f Block')">d & f Block</button>
+            <button class="nav-chip" onclick="loadChapter('Coordination Compounds')">Coordination</button>
+            <button class="nav-chip" onclick="loadChapter('Organic Mechanisms (SN1/SN2)')">Organic Mechanism</button>
+        </nav>
 
-            <!-- Block: Crystal Field Splitting -->
-            <div class="gallery-card">
-                <h3>d-Orbital Splitting</h3>
-                <div class="visual-container">
-                    <div class="cft-diagram">
-                        <div class="orbitals octahedral">
-                            <div class="level eg">eg (x²-y², z²)</div>
-                            <div class="level t2g">t2g (xy, yz, zx)</div>
-                        </div>
-                    </div>
-                </div>
-                <p class="description">Octahedral splitting (\(\Delta_o\)). eg orbitals face repulsion and move UP. t2g
-                    move DOWN.</p>
-            </div>
-
-            <!-- Block: Standard Hydrogen Electrode -->
-            <div class="gallery-card">
-                <h3>Standard Hydrogen Electrode (SHE)</h3>
-                <div class="visual-placeholder">
-                    <span>⚡ 1M H⁺ | 1 atm H₂ | Pt foil</span>
-                </div>
-                <p class="description">Used as a reference electrode. \(E^0 = 0.00 V\). Very common in 5-mark Nernst
-                    derivation questions.</p>
-            </div>
-        </main>
+        <main id="gallery-display" class="gallery-grid"></main>
 
         <footer>
             <p>"A picture is worth a thousand reactions! ❤️" - Pratik</p>
         </footer>
     </div>
+
+    <script src="visual_data.js"></script>
+    <script>
+        function loadChapter(chapterName) {
+            // Update UI chips
+            document.querySelectorAll('.nav-chip').forEach(btn => {
+                btn.classList.toggle('active', btn.innerText === chapterName || (chapterName.includes(btn.innerText)));
+            });
+
+            const container = document.getElementById('gallery-display');
+            const data = visualData.find(d => d.chapter === chapterName);
+
+            if (!data) return;
+
+            container.innerHTML = '';
+
+            data.visuals.forEach(v => {
+                const card = document.createElement('div');
+                card.className = 'gallery-card fade-in';
+
+                card.innerHTML = `
+                    <h3>${v.title}</h3>
+                    <div class="visual-container">
+                        <div class="visual-box ${v.cssClass}">
+                            ${v.type === 'graph' ? '<div class="axes"></div>' : ''}
+                            <div class="dynamic-content"></div>
+                        </div>
+                    </div>
+                    <p class="description">${v.description}</p>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Initial Load
+        window.onload = () => loadChapter('Solutions');
+    </script>
 </body>
 
 </html>
