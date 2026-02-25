@@ -86,55 +86,100 @@ header {
 }
 
 .axes {
-    width: 70%;
-    height: 70%;
+    width: 60%;
+    height: 60%;
     border-left: 2px solid #fff;
     border-bottom: 2px solid #fff;
     position: absolute;
-    bottom: 15%;
-    left: 15%;
+    bottom: 20%;
+    left: 20%;
+}
+
+.axes::before {
+    position: absolute;
+    top: -25px;
+    left: -10px;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.axes::after {
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    content: 'time →';
+}
+
+/* Axis Labels */
+.zero-order .axes::before {
+    content: '[R]';
+}
+
+.first-order .axes::before {
+    content: 'log[R]';
+}
+
+.molar-cond .axes::before {
+    content: 'Λm';
+}
+
+.molar-cond .axes::after {
+    content: '√c';
+}
+
+.atomic-radii .axes::before {
+    content: 'Radius';
+}
+
+.atomic-radii .axes::after {
+    content: 'At. No.';
 }
 
 /* Specific Graphics */
 .zero-order .dynamic-content {
     width: 2px;
-    height: 100%;
+    height: 80%;
     background: var(--primary);
     position: absolute;
-    top: 15%;
-    left: 15%;
+    top: 20%;
+    left: 20%;
     transform: rotate(45deg);
     transform-origin: top left;
+    box-shadow: 0 0 10px rgba(20, 184, 166, 0.5);
 }
 
 .first-order .dynamic-content {
     width: 2px;
-    height: 100%;
+    height: 80%;
     background: var(--secondary);
     position: absolute;
-    top: 15%;
-    left: 15%;
+    top: 20%;
+    left: 20%;
     transform: rotate(45deg);
     transform-origin: top left;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
 }
 
 .act-energy .dynamic-content {
-    width: 100px;
+    width: 120px;
     height: 60px;
     border: 3px solid var(--primary);
-    border-radius: 50px 50px 0 0;
+    border-radius: 60px 60px 0 0;
     border-bottom: none;
     position: absolute;
-    bottom: 15%;
+    bottom: 20%;
     left: 50%;
     transform: translateX(-50%);
+    background: linear-gradient(to top, rgba(20, 184, 166, 0.1), transparent);
 }
 
 .octahedral .dynamic-content::before,
 .octahedral .dynamic-content::after {
     content: '';
     position: absolute;
-    width: 80px;
+    width: 100px;
     height: 2px;
     background: #fff;
     left: 50%;
@@ -142,12 +187,13 @@ header {
 }
 
 .octahedral .dynamic-content::before {
-    top: -30px;
+    top: -40px;
     box-shadow: 0 5px var(--secondary);
+    border-top: 1px solid var(--secondary);
 }
 
 .octahedral .dynamic-content::after {
-    top: 30px;
+    top: 20px;
     border-bottom: 2px solid var(--primary);
     box-shadow: 0 10px var(--primary);
 }
