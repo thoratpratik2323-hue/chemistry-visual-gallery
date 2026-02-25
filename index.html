@@ -74,10 +74,14 @@
                             <div class="dynamic-content"></div>
                         </div>
                     </div>
-                    <p class="description">${v.description}</p>
+                    <div class="description">${v.description}</div>
                 `;
                 container.appendChild(card);
             });
+
+            if (window.MathJax) {
+                MathJax.typesetPromise();
+            }
         }
 
         // Initial Load

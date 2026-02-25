@@ -80,34 +80,37 @@ header {
 }
 
 .visual-box {
-    width: 100%;
-    height: 100%;
+    width: 160px;
+    height: 160px;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .axes {
-    width: 60%;
-    height: 60%;
+    width: 100%;
+    height: 100%;
     border-left: 2px solid #fff;
     border-bottom: 2px solid #fff;
     position: absolute;
-    bottom: 20%;
-    left: 20%;
+    bottom: 0px;
+    left: 0px;
 }
 
 .axes::before {
     position: absolute;
-    top: -25px;
-    left: -10px;
-    font-size: 0.7rem;
+    top: -20px;
+    left: -5px;
+    font-size: 0.6rem;
     color: var(--text-muted);
 }
 
 .axes::after {
     position: absolute;
-    bottom: -20px;
+    bottom: -15px;
     right: 0;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     color: var(--text-muted);
     content: 'time →';
 }
@@ -140,11 +143,11 @@ header {
 /* Specific Graphics */
 .zero-order .dynamic-content {
     width: 2px;
-    height: 80%;
+    height: 141%;
     background: var(--primary);
     position: absolute;
-    top: 20%;
-    left: 20%;
+    top: 0;
+    left: 0;
     transform: rotate(45deg);
     transform-origin: top left;
     box-shadow: 0 0 10px rgba(20, 184, 166, 0.5);
@@ -152,24 +155,24 @@ header {
 
 .first-order .dynamic-content {
     width: 2px;
-    height: 80%;
+    height: 141%;
     background: var(--secondary);
     position: absolute;
-    top: 20%;
-    left: 20%;
+    top: 0;
+    left: 0;
     transform: rotate(45deg);
     transform-origin: top left;
     box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
 }
 
 .act-energy .dynamic-content {
-    width: 120px;
+    width: 100px;
     height: 60px;
     border: 3px solid var(--primary);
     border-radius: 60px 60px 0 0;
     border-bottom: none;
     position: absolute;
-    bottom: 20%;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     background: linear-gradient(to top, rgba(20, 184, 166, 0.1), transparent);
@@ -187,15 +190,25 @@ header {
 }
 
 .octahedral .dynamic-content::before {
+    content: 'eg (dx2-y2, dz2)';
     top: -40px;
     box-shadow: 0 5px var(--secondary);
-    border-top: 1px solid var(--secondary);
+    border-top: 2px solid var(--secondary);
+    padding-top: 5px;
+    font-size: 0.5rem;
+    color: var(--text-muted);
 }
 
 .octahedral .dynamic-content::after {
+    content: 't2g (dxy, dyz, dxz)';
     top: 20px;
     border-bottom: 2px solid var(--primary);
     box-shadow: 0 10px var(--primary);
+    padding-bottom: 5px;
+    font-size: 0.5rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: flex-end;
 }
 
 .pos-deviation .dynamic-content {
@@ -280,29 +293,37 @@ header {
 }
 
 .unit-cell .dynamic-content::before {
-    content: 'Z=4';
+    content: 'Z=4 (FCC)';
     position: absolute;
     font-size: 0.6rem;
-    top: 50%;
+    bottom: -20px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
+    white-space: nowrap;
 }
 
 .crystal-defect .dynamic-content {
     display: grid;
     grid-template-columns: repeat(3, 20px);
-    gap: 5px;
+    gap: 8px;
+}
+
+.crystal-defect .dynamic-content::before {
+    content: '+ - + - + -';
+    font-size: 0.6rem;
+    color: var(--secondary);
+    letter-spacing: 5px;
 }
 
 .crystal-defect .dynamic-content::after {
     content: '';
-    width: 15px;
-    height: 15px;
-    background: var(--error);
+    width: 12px;
+    height: 12px;
+    background: #ef4444;
     border-radius: 50%;
     grid-column: 2;
     grid-row: 2;
-    box-shadow: 0 0 10px var(--error);
+    box-shadow: 0 0 10px #ef4444;
 }
 
 .bp-elevation .dynamic-content {
@@ -339,22 +360,50 @@ header {
 }
 
 .ostwald .dynamic-content {
-    width: 100px;
+    width: 80px;
     height: 100px;
     border: 2px solid var(--primary);
-    border-radius: 20px;
+    border-radius: 8px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
+    text-align: center;
+}
+
+.ostwald .dynamic-content::before {
+    content: 'Pt/Rh Catalyst';
+    color: #fbbf24;
+    margin-bottom: 5px;
 }
 
 .xe-fluorides .dynamic-content {
-    width: 10px;
-    height: 10px;
-    background: #fff;
+    width: 15px;
+    height: 15px;
+    background: var(--primary);
     border-radius: 50%;
-    box-shadow: 0 -30px 0 #fff, 0 30px 0 #fff;
+    position: relative;
+}
+
+.xe-fluorides .dynamic-content::before {
+    content: 'F';
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-weight: bold;
+}
+
+.xe-fluorides .dynamic-content::after {
+    content: 'F';
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-weight: bold;
 }
 
 .atomic-radii .dynamic-content {
@@ -388,7 +437,19 @@ header {
     height: 100px;
     border: 2px solid var(--secondary);
     border-radius: 50%;
-    transform: skewY(20deg);
+    transform: rotate(20deg);
+    position: relative;
+}
+
+.dna-helix .dynamic-content::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    left: 10px;
+    top: 5px;
 }
 
 .visual-placeholder {
