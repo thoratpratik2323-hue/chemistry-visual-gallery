@@ -225,6 +225,126 @@ header {
     background: var(--secondary);
 }
 
+/* More Visuals */
+.unit-cell .dynamic-content {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #fff;
+    position: relative;
+}
+
+.unit-cell .dynamic-content::before {
+    content: 'Z=4';
+    position: absolute;
+    font-size: 0.6rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.crystal-defect .dynamic-content {
+    display: grid;
+    grid-template-columns: repeat(3, 20px);
+    gap: 5px;
+}
+
+.crystal-defect .dynamic-content::after {
+    content: '';
+    width: 15px;
+    height: 15px;
+    background: var(--error);
+    border-radius: 50%;
+    grid-column: 2;
+    grid-row: 2;
+    box-shadow: 0 0 10px var(--error);
+}
+
+.bp-elevation .dynamic-content {
+    width: 2px;
+    height: 80%;
+    background: var(--primary);
+    position: absolute;
+    bottom: 15%;
+    left: 30%;
+    box-shadow: 40px -20px 0 var(--secondary);
+}
+
+.molar-cond .dynamic-content {
+    width: 80%;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    bottom: 30%;
+    transform: rotate(-45deg);
+}
+
+.daniel-cell .dynamic-content {
+    display: flex;
+    gap: 20px;
+}
+
+.daniel-cell .dynamic-content::before,
+.daniel-cell .dynamic-content::after {
+    content: '';
+    width: 30px;
+    height: 60px;
+    border: 2px solid #fff;
+    background: rgba(59, 130, 246, 0.2);
+}
+
+.ostwald .dynamic-content {
+    width: 100px;
+    height: 100px;
+    border: 2px solid var(--primary);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+.xe-fluorides .dynamic-content {
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 -30px 0 #fff, 0 30px 0 #fff;
+}
+
+.atomic-radii .dynamic-content {
+    width: 80%;
+    height: 60%;
+    border-bottom: 2px solid var(--primary);
+    border-radius: 0 0 50px 50px;
+    position: absolute;
+    top: 20%;
+}
+
+.cx-bond .dynamic-content {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.cx-bond .dynamic-content::before {
+    content: 'Cδ+';
+    color: var(--secondary);
+}
+
+.cx-bond .dynamic-content::after {
+    content: 'Xδ-';
+    color: var(--error);
+    font-weight: bold;
+}
+
+.dna-helix .dynamic-content {
+    width: 40px;
+    height: 100px;
+    border: 2px solid var(--secondary);
+    border-radius: 50%;
+    transform: skewY(20deg);
+}
+
 .visual-placeholder {
     font-size: 2rem;
     filter: grayscale(1);
