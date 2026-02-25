@@ -106,5 +106,56 @@ const visualData = [
                 cssClass: "sn1-profile"
             }
         ]
+    },
+    {
+        chapter: "Haloalkanes & Haloarenes",
+        visuals: [
+            {
+                title: "C-X Bond Polarity",
+                type: "diagram",
+                description: "Carbon has partial positive charge, halogen has partial negative. Polarity decreases down the group.",
+                cssClass: "cx-bond"
+            },
+            {
+                title: "Optical Activity (Enantiomers)",
+                type: "diagram",
+                description: "Non-superimposable mirror images. Chiral center carbon with four different groups.",
+                cssClass: "optical"
+            }
+        ]
+    },
+    {
+        chapter: "Aldehydes & Ketones",
+        visuals: [
+            {
+                title: "Nucleophilic Addition Control",
+                type: "diagram",
+                description: "Steric and inductive effects on the reactivity of carbonyl group.",
+                cssClass: "carbonyl-reactivity"
+            },
+            {
+                title: "Hemiacetal Formation",
+                type: "diagram",
+                description: "Step-by-step alcohol addition to aldehyde under acidic conditions.",
+                cssClass: "hemiacetal"
+            }
+        ]
+    },
+    {
+        chapter: "Biomolecules",
+        visuals: [
+            {
+                title: "Primary vs Secondary Protein Structure",
+                type: "diagram",
+                description: "Amino acid sequence vs Alpha-helix/Beta-pleated sheet folding.",
+                cssClass: "protein-struct"
+            },
+            {
+                title: "DNA Double Helix Structure",
+                type: "diagram",
+                description: "Sugar-phosphate backbone with anti-parallel strands and hydrogen bonding.",
+                cssClass: "dna-helix"
+            }
+        ]
     }
 ];
