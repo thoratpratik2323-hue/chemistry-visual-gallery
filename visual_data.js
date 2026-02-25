@@ -1,5 +1,22 @@
 const visualData = [
     {
+        chapter: "Solid State",
+        visuals: [
+            {
+                title: "Unit Cell Types (SCC, BCC, FCC)",
+                type: "diagram",
+                description: "Simple, Body-Centered, and Face-Centered packing efficiency and Z-values.",
+                cssClass: "unit-cell"
+            },
+            {
+                title: "Crystal Defects",
+                type: "diagram",
+                description: "Visualizing Schottkey and Frenkel defects in ionic solids.",
+                cssClass: "crystal-defect"
+            }
+        ]
+    },
+    {
         chapter: "Solutions",
         visuals: [
             {
@@ -47,12 +64,23 @@ const visualData = [
                 type: "graph",
                 description: "log[R] vs time is a straight line. Slope = -k/2.303.",
                 cssClass: "first-order"
+            }
+        ]
+    },
+    {
+        chapter: "p-Block Elements",
+        visuals: [
+            {
+                title: "Ostwald's Process Layout",
+                type: "diagram",
+                description: "Catalytic oxidation of ammonia to form Nitric acid (HNO3).",
+                cssClass: "ostwald"
             },
             {
-                title: "Activation Energy Profile",
-                type: "graph",
-                description: "Reactants -> Transition State -> Products. Peak is Activation Energy (Ea).",
-                cssClass: "act-energy"
+                title: "Structures of Xenon Fluorides",
+                type: "diagram",
+                description: "VSEPR shapes: XeF2 (Linear), XeF4 (Square Planar), XeF6 (Distorted Octahedral).",
+                cssClass: "xe-fluorides"
             }
         ]
     },
@@ -64,12 +92,6 @@ const visualData = [
                 type: "graph",
                 description: "Size decreases till middle (Cr), stays constant, then increases slightly at Zn.",
                 cssClass: "atomic-radii"
-            },
-            {
-                title: "Melting Point Trend",
-                type: "graph",
-                description: "Peaks at Cr, Mo, W due to max number of unpaired d-electrons.",
-                cssClass: "melting-point"
             }
         ]
     },
@@ -81,29 +103,6 @@ const visualData = [
                 type: "diagram",
                 description: "d-orbitals split into t2g (lower) and eg (higher). Δo energy gap.",
                 cssClass: "octahedral"
-            },
-            {
-                title: "Tetrahedral Field Splitting",
-                type: "diagram",
-                description: "d-orbitals split into e (lower) and t2 (higher). Reverse of octahedral.",
-                cssClass: "tetrahedral"
-            }
-        ]
-    },
-    {
-        chapter: "Organic Mechanisms (SN1/SN2)",
-        visuals: [
-            {
-                title: "SN2 Transition State",
-                type: "diagram",
-                description: "Single step. Nucleophile attacks while leaving group stays attached. Inversion happens.",
-                cssClass: "sn2-transition"
-            },
-            {
-                title: "SN1 Energy Profile",
-                type: "graph",
-                description: "Two-step reaction. Carbocation intermediate is formed. Two peaks.",
-                cssClass: "sn1-profile"
             }
         ]
     },
@@ -115,12 +114,23 @@ const visualData = [
                 type: "diagram",
                 description: "Carbon has partial positive charge, halogen has partial negative. Polarity decreases down the group.",
                 cssClass: "cx-bond"
+            }
+        ]
+    },
+    {
+        chapter: "Alcohols, Phenols & Ethers",
+        visuals: [
+            {
+                title: "Dehydration Mechanism",
+                type: "diagram",
+                description: "Step-by-step conversion of Ethanol to Ethene using H2SO4 at 443K.",
+                cssClass: "alcohol-dehydration"
             },
             {
-                title: "Optical Activity (Enantiomers)",
+                title: "Resonance in Phenol",
                 type: "diagram",
-                description: "Non-superimposable mirror images. Chiral center carbon with four different groups.",
-                cssClass: "optical"
+                description: "How oxygen's lone pair delocalizes over the benzene ring.",
+                cssClass: "phenol-resonance"
             }
         ]
     },
@@ -132,24 +142,23 @@ const visualData = [
                 type: "diagram",
                 description: "Steric and inductive effects on the reactivity of carbonyl group.",
                 cssClass: "carbonyl-reactivity"
-            },
+            }
+        ]
+    },
+    {
+        chapter: "Amines",
+        visuals: [
             {
-                title: "Hemiacetal Formation",
-                type: "diagram",
-                description: "Step-by-step alcohol addition to aldehyde under acidic conditions.",
-                cssClass: "hemiacetal"
+                title: "Basicity Trend",
+                type: "graph",
+                description: "Comparison of pKb values for Ammonia vs Methylamine vs Aniline.",
+                cssClass: "amine-basicity"
             }
         ]
     },
     {
         chapter: "Biomolecules",
         visuals: [
-            {
-                title: "Primary vs Secondary Protein Structure",
-                type: "diagram",
-                description: "Amino acid sequence vs Alpha-helix/Beta-pleated sheet folding.",
-                cssClass: "protein-struct"
-            },
             {
                 title: "DNA Double Helix Structure",
                 type: "diagram",
